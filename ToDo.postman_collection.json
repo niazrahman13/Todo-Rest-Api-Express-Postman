@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "a041fa86-1a5b-418f-96e0-53c8cf20ca43",
+		"name": "ToDo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28184537",
+		"_collection_link": "https://blue-escape-118680.postman.co/workspace/ToDo~aea6aa9d-9982-454e-b234-8860e1b64682/collection/28184537-a041fa86-1a5b-418f-96e0-53c8cf20ca43?action=share&creator=28184537&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "Create Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Name\":\"Tahsin Bin Elias\",\r\n        \"Id\":\"131\",\r\n        \"Dept\":\"BBA\",\r\n        \"UserName\":\"tahsin\",\r\n        \"Password\":\"tahsin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/createProfile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"createProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"niaz\",\r\n    \"password\":\"niaz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/loginProfile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"loginProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/selectProfile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"selectProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "Create Todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\":\"English\",\r\n    \"description\":\"Very Awesome\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/createTodo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"createTodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/readtodo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"readtodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"updateStatus\":\"Completed\",\r\n        \"id\":\"649f2c8ea8219e0619a7dfe5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/updateStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"updateStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"649f2c8ea8219e0619a7dfe5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/removeTodo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"removeTodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Todo Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Now\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/selectTodoStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"selectTodoStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"disabled": true
+		},
+		{
+			"key": "BaseURL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpdGVtcyI6W3siX2lkIjoiNjQ5ZjAxMjIwMTIxYmFmMzI4ZDAyYjcwIiwiTmFtZSI6Ik5pYXogUmFobWFuIiwiSWQiOiIxMjEiLCJEZXB0IjoiQ1NFIiwiVXNlck5hbWUiOiJuaWF6IiwiUGFzc3dvcmQiOiJuaWF6In1dLCJpYXQiOjE2ODg0NjMwNzcsImV4cCI6MTY4ODU0OTQ3N30.8lStjL3YqG432lq3gd90kZSl2rZ3Svw9X9XvFKvVahI",
+			"type": "string"
+		}
+	]
+}
